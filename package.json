@@ -10,7 +10,7 @@
 	},
 	"main": "server.js",
 	"scripts": {
-		"start": "set MESSAGE_STYLE=uppercase && node server.js"
+		"start": "node server.js"
 	},
 	"engines": {
 		"node": "4.7.0"
