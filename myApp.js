@@ -15,10 +15,10 @@ console.log("Hello World");
 app.get("/", (req, res)=>res.sendFile(__dirname+"/views/index.html"))
 
 /** 4) Serve static assets  */
-express.static(path) is an example of a middleware
+// express.static(path) is an example of a middleware
 //this middleware is mounted using app.use(path, middleWare) where the path is optional
 //if no path is provided, the middleware is executed for all reqeests
-// app.use(express.static(__dirname+"/public"))
+app.use(express.static(__dirname+"/public"))
 
 /** 5) serve JSON on a specific route */
 app.get("/json", (req, res)=>{
