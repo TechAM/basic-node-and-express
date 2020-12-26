@@ -3,6 +3,7 @@
  * the verification process may break
  * ***************************************************/
 
+/*BIG NOTE: UNCOMMENT THIS LINE TO WORK LOCALLY, COMMENT FOR HEROKU*/
 // require('dotenv').config() //required for accessing environment variables I created in .env
 
 var bGround = require('fcc-express-bground');
