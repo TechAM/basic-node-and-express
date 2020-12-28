@@ -47,13 +47,30 @@ app.get("/now", (req, res, next)=>{
 })
 
 /** 9)  Get input from client - Route parameters */
+// the colon indicates that this is part of the URL is input from the client
+//so e.g. /darthvader/echo will result in req.word being darthvader
 app.get("/:word/echo", (req, res)=>{
+	// console.log(req)
+	// console.log(req.params)
 	res.json({echo:req.params.word})	
 })
 
 
 /** 10) Get input from client - Query parameters */
 // /name?first=<firstname>&last=<lastname>
+app.get("/name", (req, res)=>{
+	// console.log(req.query)
+	res.json({name: req.query.first + " " + req.query.last})
+})
+
+
+// app.route("/name")
+// 	.get((req, res)=>{
+// 		res.json({name: req.query.first + " " + req.query.last})
+// 	})
+// 	.post((req, res)=>{
+// 		console.log(req)
+// 	})
 
 /** 11) Get ready for POST Requests - the `body-parser` */
 // place it before all the routes !
