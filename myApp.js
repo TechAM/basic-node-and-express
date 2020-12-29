@@ -10,6 +10,7 @@ app.use((req, res, next)=>{
 
 
 // --> 11)  Mount the body-parser middleware  here
+//parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({extended:false}))
 
 /** 1) Meet the node console. */
@@ -79,6 +80,10 @@ app.get("/name", (req, res)=>{
 
 
 /** 12) Get data form POST  */
+app.post("/name", (req, res)=>{
+	// console.log(req.body)
+	res.json({name:req.body.first + " " + req.body.last})
+})
 
 // This would be part of the basic setup of an Express app
 // but to allow FCC to run tests, the server is already active
